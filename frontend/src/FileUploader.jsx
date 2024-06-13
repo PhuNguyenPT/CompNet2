@@ -32,7 +32,7 @@ const FileUploader = () => {
   };
 
   return (
-    <div>
+    <div className= "text-center custom-class">
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload File</button>
       {uploading? <p>Uploading...</p> : null}

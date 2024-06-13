@@ -4,6 +4,7 @@ import axios from 'axios';
 const FileSearch = () => {
   const [fileName, setFileName] = useState('');
   const [files, setFiles] = useState([]);
+  //const [pictures, setPictures] = useState([]);
   const [searching, setSearching] = useState(false);
   const [notFound, setNotFound] = useState(false);
 
@@ -29,7 +30,7 @@ const FileSearch = () => {
   };
 
   return (
-    <div>
+    <div className= "text-center custom-class">
       <input type="text" value={fileName} onChange={(e) => setFileName(e.target.value)} />
       <button onClick={handleSearch}>Search</button>
       {searching ? (
@@ -41,6 +42,35 @@ const FileSearch = () => {
           {files.map((file) => (
             <li key={file.name}>
               <p>{file.name}</p>
+              {file.fileType.startsWith('image/') ? (
+                <img
+                    src={`data:${file.fileType};base64,${file.fileByte}`}
+                    alt={file.name}
+                    //style={{ maxWidth: 300, maxHeight: 300 }}
+                    onLoad={(event) => {
+                        const img = event.target;
+                        const maxWidth = 500; // desired maximum width
+                        const maxHeight = 500; // desired maximum height
+                        const width = img.width;
+                        const height = img.height;
+                        let newWidth, newHeight;
+
+                        if (width > height) {
+                          newWidth = maxWidth;
+                          newHeight = (height / width) * maxWidth;
+                        } else {
+                          newHeight = maxHeight;
+                          newWidth = (width / height) * maxHeight;
+                        }
+
+                        img.style.width = `${newWidth}px`;
+                        img.style.height = `${newHeight}px`;
+                    }}
+                    style={{ marginBottom: 10 }}
+                />
+              ) : (
+                <p>Not an image</p>
+              )}
             </li>
           ))}
         </ul>
