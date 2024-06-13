@@ -21,7 +21,7 @@ const FileDeleter = () => {
   };
 
   return (
-    <div>
+    <div className= "text-center custom-class">
       <input type="text" value={fileName} onChange={(e) => setFileName(e.target.value)} />
       <button onClick={handleDelete}>Delete</button>
       {deleting ? (
