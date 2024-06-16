@@ -41,24 +41,24 @@ cd <repository-directory>
 
 ### 4. Run the Backend Server
 
+1. Navigate to the backend directory and install mvn:
+```
+cd backend
+mvn clean install
+```
+2. Run the backend:
+```
+java -jar target/jpa-0.0.1-SNAPSHOT.jar
+```
 Run the JpaApplication.java to start the backend server
 
 ### 5. Run the Frontend Server
 
 1. Open a new terminal window.
-2. Navigate to the frontend directory:
-   
-```
-cd backend
-```
-3. Start the frontend development server:
-```
-mvn clean install
-```
-3. Navigate to the frontend directory:
-   
+2. Navigate to the frontend directory and install npm:   
 ```
 cd frontend
+npm install
 ```
 3. Start the frontend development server:
 ```
