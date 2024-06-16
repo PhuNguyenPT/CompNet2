@@ -50,8 +50,6 @@ mvn clean install
 ```
 java -jar target/jpa-0.0.1-SNAPSHOT.jar
 ```
-Run the JpaApplication.java to start the backend server
-
 ### 5. Run the Frontend Server
 
 1. Open a new terminal window.
