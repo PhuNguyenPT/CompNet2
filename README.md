@@ -49,6 +49,15 @@ Run the JpaApplication.java to start the backend server
 2. Navigate to the frontend directory:
    
 ```
+cd backend
+```
+3. Start the frontend development server:
+```
+mvn clean install
+```
+3. Navigate to the frontend directory:
+   
+```
 cd frontend
 ```
 3. Start the frontend development server:
