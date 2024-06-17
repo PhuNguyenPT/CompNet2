@@ -38,6 +38,13 @@ cd <repository-directory>
 
 1. Open the application.yaml file located in the src/main/resources directory.
 2. Update the database configuration section with your PostgreSQL credentials.
+```
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/data_jpa
+    username: postgres
+    password: change_your_password_here
+```
 
 ### 4. Run the Backend Server
 
