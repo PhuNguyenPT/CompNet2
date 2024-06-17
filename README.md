@@ -38,12 +38,22 @@ cd <repository-directory>
 
 1. Open the application.yaml file located in the src/main/resources directory.
 2. Update the database configuration section with your PostgreSQL credentials.
+3. Update address to your ipv4
 ```
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/data_jpa
     username: postgres
     password: change_your_password_here
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database: postgresql
+    show-sql: true
+server:
+  error:
+    include-message: always
+  address: 'change_your_ipv4_here'
 ```
 
 ### 4. Run the Backend Server
@@ -58,7 +68,31 @@ mvn clean install
 java -jar target/jpa-0.0.1-SNAPSHOT.jar
 ```
 
-### 5. Run the Frontend Server
+### 5. Change frontend ipv4
+
+  To allow multiple client to connect to the server, you have to adjust the ipv4 address according to your server
+
+1. FileDeleter.jsx
+  ```
+axios.delete(`http://localhost:8080/files/delete/${fileName}`) // change your ipv4 here
+  ```
+2. FileSearch.jsx
+  ```
+axios.get(`http://localhost:8080/files/search/${fileName}`) //change your ipv4 here
+  ```
+3. FileUploader.jsx
+  ```
+axios.post('http://localhost:8080/files/upload', formData, { // change your ipv4 here
+  ```
+4. vite.config.js
+ ```
+  server: {
+    host: 'localhost', // change your ipv4 here
+    port: 3000
+  }
+})
+ ```
+### 6. Run the Frontend Server
 
 1. Open a new terminal window.
 2. Navigate to the frontend directory and install npm:   
