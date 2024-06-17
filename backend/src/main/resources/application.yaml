@@ -12,3 +12,4 @@ spring:
 server:
   error:
     include-message: always
+  address: 'change_your_ipv4_here' 

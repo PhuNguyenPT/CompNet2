@@ -9,7 +9,7 @@ const FileDeleter = () => {
 
   const handleDelete = () => {
     setDeleting(true);
-    axios.delete(`http://localhost:8080/files/delete/${fileName}`)
+    axios.delete(`http://localhost:8080/files/delete/${fileName}`)  //change localhost to ipv4
      .then((response) => {
         setDeleting(false);
       })

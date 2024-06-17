@@ -16,7 +16,7 @@ const FileUploader = () => {
     formData.append('file', file);
     console.log(file);
 
-    axios.post('http://localhost:8080/files/upload', formData, {
+    axios.post('http://localhost:8080/files/upload', formData, {  // change localhost to ipv4 
       headers: {
         'Content-Type': 'multipart/form-data',
       },

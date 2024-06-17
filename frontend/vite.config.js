@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
 
   server: {
+    host: 'change_your_ipv4_here',
     port: 3000
   }
 })

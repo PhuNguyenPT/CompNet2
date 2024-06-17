@@ -12,7 +12,7 @@ const FileSearch = () => {
     setSearching(true);
     setNotFound(false);
 
-    axios.get(`http://localhost:8080/files/search/${fileName}`)
+    axios.get(`http://localhost:8080/files/search/${fileName}`)  // change localhost to your ipv4
      .then((response) => {
         if (response.data.length === 0) {
           setNotFound(true);
