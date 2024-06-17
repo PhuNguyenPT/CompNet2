@@ -90,8 +90,6 @@ axios.post('http://localhost:8080/files/upload', formData, { // change your ipv4
     host: 'change_your_ipv4_here',
     port: 3000
   }
-})
-
  ```
 ### 6. Run the Frontend Server
 
