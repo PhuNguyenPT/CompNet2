@@ -36,9 +36,10 @@ cd <repository-directory>
 
 ### 3. Configure the Application
 
-1. Open the application.yaml file located in the src/main/resources directory.
-2. Update the database configuration section with your PostgreSQL credentials.
-3. Update address to your ipv4
+1. Open intellij File -> Project Structure -> Download JDK -> Version 17 -> Vendor: Amazone Corretto -> Download
+2. Open the application.yaml file located in the src/main/resources directory.
+3. Update the database configuration section with your PostgreSQL credentials.
+4. Update address to your ipv4
 ```
 spring:
   datasource:
